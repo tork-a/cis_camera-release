@@ -88,6 +88,11 @@
 namespace cis_camera
 {
 
+/**
+ * @brief The CameraDriver class is a ROS device driver of CIS ToF Camera Sensor.
+ * The CameraDriver class gets/sets configurations of the ToF camera sensor, 
+ * aquires RGB, IR and Depth Images from the camera sensor and publishes these images.
+ */
 class CameraDriver
 {
 public:
@@ -146,7 +151,6 @@ private:
     TOF_SET_IR_GAIN         = 0x0009,
     TOF_SET_ERROR_STOP      = 0x0010,
     TOF_SET_ERROR_CLEAR     = 0x7F01,
-//    TOF_GET_DEPTH_IR        = 0x8001,
     TOF_GET_DEPTH_RANGE     = 0x8002,
     TOF_GET_THRESHOLD       = 0x8003,
     TOF_GET_NR_FILTER       = 0x8004,
@@ -190,7 +194,6 @@ private:
   int setToFEEPROMMode( uint16_t mode );
   int clearToFError();
   
-//  int getToFDepthIR( uint16_t& depth_ir );
   int getToFDepthRange( uint16_t& depth_range, uint16_t& dr_index );
   int getToFThreshold( uint16_t& threshold );
   int getToFNRFilter( uint16_t& nr_filter );
